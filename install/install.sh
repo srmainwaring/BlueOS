@@ -3,7 +3,9 @@
 # Set desired version to be installed
 VERSION="${VERSION:-prs/pr-ubuntu-24.04}"
 GITHUB_REPOSITORY=${GITHUB_REPOSITORY:-srmainwaring/BlueOS}
-DOCKER_USER=${DOCKER_USER:-$(echo $GITHUB_REPOSITORY | cut -d'/' -f1 | tr '[:upper:]' '[:lower:]')}
+DOCKER_VERSION="${DOCKER_VERSION:-master}"
+DOCKER_GITHUB_REPOSITORY=${DOCKER_GITHUB_REPOSITORY:-bluerobotics/BlueOS}
+DOCKER_USER=${DOCKER_USER:-$(echo $DOCKER_GITHUB_REPOSITORY | cut -d'/' -f1 | tr '[:upper:]' '[:lower:]')}
 REMOTE="${REMOTE:-https://raw.githubusercontent.com/${GITHUB_REPOSITORY}}"
 ROOT="$REMOTE/$VERSION"
 
@@ -201,9 +203,13 @@ command -v raspi-config && (
 )
 
 echo "Downloading bootstrap"
-BLUEOS_BOOTSTRAP="$DOCKER_USER/blueos-bootstrap:$VERSION" # Use current version
-BLUEOS_CORE="$DOCKER_USER/blueos-core:$VERSION" # We don't have a stable tag yet
+BLUEOS_BOOTSTRAP="$DOCKER_USER/blueos-bootstrap:$DOCKER_VERSION" # Use current version
+BLUEOS_CORE="$DOCKER_USER/blueos-core:$DOCKER_VERSION" # We don't have a stable tag yet
 BLUEOS_FACTORY="bluerobotics/blueos-core:factory" # used for "factory reset"
+
+echo "BLUEOS_BOOTSTRAP: ${BLUEOS_BOOTSTRAP}"
+echo "BLUEOS_CORE: ${BLUEOS_CORE}"
+echo "BLUEOS_FACTORY: ${BLUEOS_FACTORY}"
 
 docker pull $BLUEOS_BOOTSTRAP
 docker pull $BLUEOS_CORE

@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 
 # Set desired version to be installed
-# VERSION="${VERSION:-master}"
-# GITHUB_REPOSITORY=${GITHUB_REPOSITORY:-bluerobotics/BlueOS}
 VERSION="${VERSION:-prs/pr-ubuntu-24.04}"
 GITHUB_REPOSITORY=${GITHUB_REPOSITORY:-srmainwaring/BlueOS}
 DOCKER_USER=${DOCKER_USER:-$(echo $GITHUB_REPOSITORY | cut -d'/' -f1 | tr '[:upper:]' '[:lower:]')}

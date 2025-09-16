@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 # Detect and configure hardware for each supported plataform
-VERSION="${VERSION:-master}"
-GITHUB_REPOSITORY=${GITHUB_REPOSITORY:-bluerobotics/BlueOS}
+VERSION="${VERSION:-prs/pr-ubuntu-24.04}"
+GITHUB_REPOSITORY=${GITHUB_REPOSITORY:-srmainwaring/BlueOS}
 REMOTE="${REMOTE:-https://raw.githubusercontent.com/${GITHUB_REPOSITORY}}"
 ROOT="$REMOTE/$VERSION"
 CONFIGURE_BOARD_PATH="$ROOT/install/boards"

@@ -2,15 +2,15 @@
 
 echo "Configuring BCM28XX board (Raspberry Pi zero, 1, 2, 3).."
 
-CMDLINE_FILE=/boot/cmdline.txt
+CMDLINE_FILE=/boot/firmware/cmdline.txt
 
 # Remove any configuration related to i2c and spi/spi1 and do the necessary changes for navigator
 echo "- Enable I2C, SPI and UART."
 for STRING in "dtparam=i2c_arm=" "dtparam=spi=" "dtoverlay=spi1" "dtoverlay=uart1"; do
-    sudo sed -i "/$STRING/d" /boot/config.txt
+    sudo sed -i "/$STRING/d" /boot/firmware/config.txt
 done
 for STRING in "dtparam=i2c_arm=on" "dtparam=spi=on" "dtoverlay=spi1-3cs" "dtoverlay=uart1"; do
-    echo "$STRING" | sudo tee -a /boot/config.txt
+    echo "$STRING" | sudo tee -a /boot/firmware/config.txt
 done
 
 # Check for valid modules file to load kernel modules

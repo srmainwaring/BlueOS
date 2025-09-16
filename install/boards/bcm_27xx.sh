@@ -6,9 +6,9 @@ VERSION="${VERSION:-master}"
 GITHUB_REPOSITORY=${GITHUB_REPOSITORY:-bluerobotics/BlueOS}
 REMOTE="${REMOTE:-https://raw.githubusercontent.com/${GITHUB_REPOSITORY}}"
 ROOT="$REMOTE/$VERSION"
-CMDLINE_FILE=/boot/cmdline.txt
-CONFIG_FILE=/boot/config.txt
-OVERLAYS_DIR=/boot/overlays
+CMDLINE_FILE=/boot/firmware/cmdline.txt
+CONFIG_FILE=/boot/firmware/config.txt
+OVERLAYS_DIR=/boot/firmware/overlays
 alias curl="curl --retry 6 --max-time 15 --retry-all-errors --retry-delay 20 --connect-timeout 60"
 
 # Uses /boot/firmware directory if exists

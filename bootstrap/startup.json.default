@@ -4,7 +4,6 @@
         "image": "rhysmainwaring/blueos-core",
         "enabled": true,
         "environment": [
-            "BLUEOS_DISABLE_SERVICES='zenohd,beacon,nmea_injector,iperf3,pardal,log_zipper,bag_of_holding,recorder'",
             "BLUEOS_DISABLE_MEMORY_LIMIT='false'"
         ],
         "webui": false,

@@ -1,11 +1,10 @@
 #!/usr/bin/env bash
 
 # Set desired version to be installed
-VERSION="${VERSION:-prs/pr-ubuntu-24.04}"
+VERSION="${VERSION:-pi-zero-2w}"
 GITHUB_REPOSITORY=${GITHUB_REPOSITORY:-srmainwaring/BlueOS}
-DOCKER_VERSION="${DOCKER_VERSION:-master}"
-DOCKER_GITHUB_REPOSITORY=${DOCKER_GITHUB_REPOSITORY:-bluerobotics/BlueOS}
-DOCKER_USER=${DOCKER_USER:-$(echo $DOCKER_GITHUB_REPOSITORY | cut -d'/' -f1 | tr '[:upper:]' '[:lower:]')}
+DOCKER_VERSION="${DOCKER_VERSION:-pi-zero-2w}"
+DOCKER_USER=${DOCKER_USER:-rhysmainwaring}
 REMOTE="${REMOTE:-https://raw.githubusercontent.com/${GITHUB_REPOSITORY}}"
 ROOT="$REMOTE/$VERSION"
 

@@ -2,7 +2,7 @@
 
 echo "Configuring BCM27XX board (Raspberry Pi 4).."
 
-VERSION="${VERSION:-ubuntu-24.04}"
+VERSION="${VERSION:-pi-zero-2w}"
 GITHUB_REPOSITORY=${GITHUB_REPOSITORY:-srmainwaring/BlueOS}
 REMOTE="${REMOTE:-https://raw.githubusercontent.com/${GITHUB_REPOSITORY}}"
 ROOT="$REMOTE/$VERSION"

@@ -4,7 +4,7 @@ set -e
 
 echo "Configuring BCM2712 board (Raspberry Pi 5).."
 
-VERSION="${VERSION:-ubuntu-24.04}"
+VERSION="${VERSION:-pi-zero-2w}"
 GITHUB_REPOSITORY=${GITHUB_REPOSITORY:-srmainwaring/BlueOS}
 REMOTE="${REMOTE:-https://raw.githubusercontent.com/${GITHUB_REPOSITORY}}"
 ROOT="$REMOTE/$VERSION"

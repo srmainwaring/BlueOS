@@ -1,8 +1,12 @@
 {
     "core": {
         "tag": "factory",
-        "image": "bluerobotics/blueos-core",
+        "image": "rhysmainwaring/blueos-core",
         "enabled": true,
+        "environment": [
+            "BLUEOS_DISABLE_SERVICES='cable_guy,commander,zenohd,beacon,nmea_injector,helper,iperf3,linux2rest,filebrowser,versionchooser,pardal,log_zipper,bag_of_holding,recorder'",
+            "BLUEOS_DISABLE_MEMORY_LIMIT='false'"
+        ],
         "webui": false,
         "network": "host",
         "binds": {

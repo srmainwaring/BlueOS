@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Detect and configure hardware for each supported plataform
-VERSION="${VERSION:-ubuntu-24.04}"
+VERSION="${VERSION:-pi-zero-2w}"
 GITHUB_REPOSITORY=${GITHUB_REPOSITORY:-srmainwaring/BlueOS}
 REMOTE="${REMOTE:-https://raw.githubusercontent.com/${GITHUB_REPOSITORY}}"
 ROOT="$REMOTE/$VERSION"

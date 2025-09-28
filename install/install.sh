@@ -204,7 +204,7 @@ command -v raspi-config && (
 echo "Downloading bootstrap"
 BLUEOS_BOOTSTRAP="$DOCKER_USER/blueos-bootstrap:$DOCKER_VERSION" # Use current version
 BLUEOS_CORE="$DOCKER_USER/blueos-core:$DOCKER_VERSION" # We don't have a stable tag yet
-BLUEOS_FACTORY="bluerobotics/blueos-core:factory" # used for "factory reset"
+BLUEOS_FACTORY="$DOCKER_USER/blueos-core:factory" # used for "factory reset"
 
 echo "BLUEOS_BOOTSTRAP: ${BLUEOS_BOOTSTRAP}"
 echo "BLUEOS_CORE: ${BLUEOS_CORE}"

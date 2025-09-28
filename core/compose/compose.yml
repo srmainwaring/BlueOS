@@ -1,7 +1,7 @@
 version: '3.7'
 services:
   blueos-core:
-    image: bluerobotics/blueos-core:master
+    image: rhysmainwaring/blueos-core:pi-zero-2w
     container_name: blueos-core
     privileged: true
     # This can be used as an alternative to ports binding

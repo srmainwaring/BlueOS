@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-echo "Configuring BCM27XX board (Raspberry Pi 4).."
+echo "Configuring BCM27XX board (Raspberry Pi 4, Raspberry Pi Zero 2 W).."
 
 VERSION="${VERSION:-pi-zero-2w}"
 GITHUB_REPOSITORY=${GITHUB_REPOSITORY:-srmainwaring/BlueOS}
@@ -57,6 +57,35 @@ for STRING in \
     "dtoverlay=uart3" \
     "dtoverlay=uart4" \
     "dtoverlay=uart5" \
+    "dtparam=i2c_vc=on" \
+    "dtoverlay=i2c1" \
+    "dtparam=i2c_arm_baudrate=1000000" \
+    "dtoverlay=i2c4,pins_6_7,baudrate=1000000" \
+    "dtoverlay=i2c6,pins_22_23,baudrate=400000" \
+    "dtparam=spi=on" \
+    "dtoverlay=spi0-led" \
+    "dtoverlay=spi1-3cs" \
+    "gpio=11,24,25=op,pu,dh" \
+    "gpio=37=op,pd,dl" \
+    "dtoverlay=dwc2,dr_mode=otg" \
+    ; do \
+    sed -i "$line_number r /dev/stdin" $CONFIG_FILE <<< "$STRING"
+done
+
+# TODO: Pi Zero 2 W changes - currently just repeating settings for Pi 4
+# add [pi02] if it is not there
+if ! grep -q "\[pi02\]" $CONFIG_FILE; then
+    echo "[pi02]" >> $CONFIG_FILE
+fi
+# find the line number of the [pi02] tag
+
+line_number=$(grep -n "\[pi02\]" $CONFIG_FILE | awk -F ":" '{print $1}')
+echo "Line number of [pi02] tag: $line_number"
+
+for STRING in \
+    "enable_uart=1" \
+    "dtoverlay=disable-bt" \
+    "dtoverlay=uart1" \
     "dtparam=i2c_vc=on" \
     "dtoverlay=i2c1" \
     "dtparam=i2c_arm_baudrate=1000000" \

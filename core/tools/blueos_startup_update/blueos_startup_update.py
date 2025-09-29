@@ -756,10 +756,10 @@ def main() -> int:
             ]
         )
 
-    if host_cpu == CpuType.PI4:
+    if host_cpu in [CpuType.PI4, CpuType.PI02]:
         patches_to_apply.extend([("navigator", update_navigator_overlays)])
 
-    if host_cpu in [CpuType.PI4, CpuType.PI5]:
+    if host_cpu in [CpuType.PI4, CpuType.PI5, CpuType.PI02]:
         patches_to_apply.extend(
             [
                 ("dwc2", update_dwc2),

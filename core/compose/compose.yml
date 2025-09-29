@@ -1,7 +1,7 @@
 version: '3.7'
 services:
   blueos-core:
-    image: bluerobotics/blueos-core:master
+    image: rhysmainwaring/blueos-core:pi-zero-2w-bookworm
     container_name: blueos-core
     privileged: true
     # This can be used as an alternative to ports binding
@@ -24,7 +24,7 @@ services:
     pid: "host"
     environment:
       - BLUEOS_DISABLE_SERVICES=cable_guy,wifi,commander
-      - BLUEOS_DISABLE_MEMORY_LIMIT=true
+      - BLUEOS_DISABLE_MEMORY_LIMIT=false
       - BLUEOS_DISABLE_STARTUP_UPDATE=true
   #   ports:
   #     - "80:80"

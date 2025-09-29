@@ -19,6 +19,7 @@ class CpuType(str, Enum):
     PI3 = "Raspberry Pi 3 (BCM2837)"
     PI4 = "Raspberry Pi 4 (BCM2711)"
     PI5 = "Raspberry Pi 5 (BCM2712)"
+    PI02 = "Raspberry Pi Zero 2 W (BCM2710A1)"
     Other = "Other"
 
 
@@ -43,6 +44,8 @@ def get_cpu_type() -> CpuType:
                 return CpuType.PI5
             if "Raspberry Pi 3" in line:
                 return CpuType.PI3
+            if "Raspberry Pi Zero 2 W" in line:
+                return CpuType.PI02
     return CpuType.Other
 
 

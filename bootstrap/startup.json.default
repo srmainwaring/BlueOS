@@ -7,7 +7,7 @@
             "BLUEOS_DISABLE_SERVICES=autopilot,cable_guy,video,mavlink2rest,kraken,wifi,zenohd,beacon,bridget,commander,nmea_injector,helper,iperf3,linux2rest,filebrowser,pardal,ping,user_terminal,ttyd,nginx,log_zipper,bag_of_holding,recorder",
             "BLUEOS_DISABLE_MEMORY_LIMIT=false",
             "SSH_USER=pi",
-            "SSH_PASSWORD=ardupilot",
+            "SSH_PASSWORD=ardupilot"
         ],
         "webui": true,
         "network": "host",

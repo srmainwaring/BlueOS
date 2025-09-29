@@ -99,7 +99,7 @@ export default Vue.extend({
         case 2: human_message = 'Conflicting arguments were provided'; break
         case 3: human_message = 'A runtime error occurred'; break
         case 4: human_message = 'An error occurred while parsing'; break
-        case 5: human_message = 'The password provided is incorrect, it should be "raspberry"'; break
+        case 5: human_message = 'The password provided is incorrect, it should be "ardupilot"'; break
         case 6: human_message = 'The host key is unknown'; break
         case 7: human_message = 'The host key has changed'; break
         default: human_message = 'Unknown error'; break

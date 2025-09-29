@@ -14,7 +14,7 @@ def run_command_with_password(command: str, check: bool = True) -> "subprocess.C
     # attempt to run the command with sshpass
     # used as a fallback if the ssh key is not found
     user = os.environ.get("SSH_USER", "pi")
-    password = os.environ.get("SSH_PASSWORD", "raspberry")
+    password = os.environ.get("SSH_PASSWORD", "ardupilot")
 
     return subprocess.run(
         [
@@ -86,7 +86,7 @@ def upload_file_with_password(
     # attempt to upload the file with sshpass
     # used as a fallback if the ssh key is not found
     user = os.environ.get("SSH_USER", "pi")
-    password = os.environ.get("SSH_PASSWORD", "raspberry")
+    password = os.environ.get("SSH_PASSWORD", "ardupilot")
 
     return subprocess.run(
         [

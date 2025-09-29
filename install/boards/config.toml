@@ -20,8 +20,8 @@ hostname = "blueos"
 [user]
 # If present, the default "rpi" user gets renamed to this "name"
 name = "pi"
-# The password can be encrypted or plain. To encrypt, we can use "openssl passwd -5 raspberry"
-password = "$5$jN49NV5TpvPOd.dA$cNLchFFnGqbYgyyHpIs5jZwCgAFbTb6QhaxiN8UdjO/"
+# The password can be encrypted or plain. To encrypt, we can use "openssl passwd -5 ardupilot"
+password = "$5$/EINcKTEVU78jnwS$.WL5hr2Kmy9BiNlPMqbQQzottJ/gJGTUjj035.dvyE9"
 password_encrypted = true
 
 [ssh]

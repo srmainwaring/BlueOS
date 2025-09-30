@@ -23,7 +23,6 @@ services:
       - ../services:/home/pi/services
     pid: "host"
     environment:
-      - BLUEOS_DISABLE_SERVICES=cable_guy,wifi,commander
       - BLUEOS_DISABLE_MEMORY_LIMIT=false
       - BLUEOS_DISABLE_STARTUP_UPDATE=true
   #   ports:

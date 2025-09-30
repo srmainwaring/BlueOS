@@ -23,6 +23,7 @@ services:
       - ../services:/home/pi/services
     pid: "host"
     environment:
+      - BLUEOS_DISABLE_SERVICES=cable_guy,wifi,commander,autopilot,video,mavlink_camera_manager,mavlink2rest,zenohd,nmea_injector,helper,iperf3,pardal,ping,user_terminal,ttyd,log_zipper,bag_of_holding,recorder
       - BLUEOS_DISABLE_MEMORY_LIMIT=false
       - BLUEOS_DISABLE_STARTUP_UPDATE=true
   #   ports:

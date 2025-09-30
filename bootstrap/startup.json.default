@@ -4,6 +4,7 @@
         "image": "rhysmainwaring/blueos-core",
         "enabled": true,
         "environment": [
+            "BLUEOS_DISABLE_SERVICES=autopilot,video,mavlink_camera_manager,mavlink2rest,zenohd,nmea_injector,helper,iperf3,pardal,ping,user_terminal,ttyd,log_zipper,bag_of_holding,recorder",
             "BLUEOS_DISABLE_MEMORY_LIMIT=false"
         ],
         "webui": false,

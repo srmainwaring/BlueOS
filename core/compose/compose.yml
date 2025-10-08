@@ -25,7 +25,7 @@ services:
     environment:
       - BLUEOS_DISABLE_MEMORY_LIMIT=false
       - BLUEOS_DISABLE_PATCHES=startup,userdata,nginx,dns,ssh,noIPV6,swap,cgroups,revert_update_dwc2,clean_config_pi3,navigator,dwc2,i2c4,wpa
-      - BLUEOS_DISABLE_SERVICES=cable_guy,wifi,commander,autopilot,video,mavlink_camera_manager,mavlink2rest,zenohd,nmea_injector,helper,iperf3,pardal,ping,user_terminal,ttyd,log_zipper,bag_of_holding,recorder
+      - BLUEOS_DISABLE_SERVICES=cable_guy,wifi,commander,autopilot,video,mavlink2rest,zenohd,nmea_injector,helper,iperf3,pardal,ping,user_terminal,ttyd,log_zipper,bag_of_holding,recorder
       - BLUEOS_DISABLE_STARTUP_UPDATE=true
   #   ports:
   #     - "80:80"

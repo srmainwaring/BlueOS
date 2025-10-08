@@ -289,7 +289,7 @@ class Bootstrapper:
 
                 if image != Bootstrapper.SETTINGS_NAME_CORE:
                     continue
-
+                
                 if self.is_version_chooser_online():
                     self.core_last_response_time = time.monotonic()
                     continue
@@ -300,13 +300,14 @@ class Bootstrapper:
 
                 # Version choose failed, time to restarted core
                 self.core_last_response_time = time.monotonic()
-                logger.warning("Core has not responded in 5 minutes, resetting to factory...")
-                self.overwrite_config_file_with_defaults()
-                try:
-                    if self.start(image):
-                        logger.info("Restarted core..")
-                except Exception as error:
-                    logger.error(f"error: {type(error)}: {error}, retrying...")
+                # TODO: issue with version_chooser - assume blueos-core is always online
+                # logger.warning("Core has not responded in 5 minutes, resetting to factory...")
+                # self.overwrite_config_file_with_defaults()
+                # try:
+                #     if self.start(image):
+                #         logger.info("Restarted core..")
+                # except Exception as error:
+                #     logger.error(f"error: {type(error)}: {error}, retrying...")
 
             # This is required for the tests, we need to "finish" somehow
             if "pytest" in sys.modules:
